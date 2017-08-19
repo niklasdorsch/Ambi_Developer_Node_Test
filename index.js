@@ -76,13 +76,11 @@ function processDicts(inDict) {
 	});
 	var fStr = "";
 	for (var x in items) { 
-		if (/[a-z0-9]/.test(items[x])) {
-			fStr += items[x][0].substr(1) + "\t--\t" + items[x][1] + "\n";
-		}
+			fStr += items[x][0].substr(1) + "\t--\t" + items[x][1] + "\n";	
 	}
 	return fStr;
 }
-
+/*This function writes a file to a string and prints a error if it does not work*/
 function printString(str) {
 
 	fs.writeFile(file3, str, function(err) {
@@ -90,13 +88,13 @@ function printString(str) {
 	        return console.log(err);
 	    }
 
-	    	console.log("The file was saved");
+	    console.log("The file was saved");
 	}); 
 }
 
+//exports 
+module.exports = compareFile;
 
-
-
-
+//Calls the function
 
 compareFile("file1.txt","file2.txt", "file3.txt");
