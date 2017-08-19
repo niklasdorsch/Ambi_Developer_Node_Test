@@ -12,3 +12,4 @@ I tried to make functions small. Each function clearly has its own job.
 
 
 
+To run the code simply download it and use "node index.js"
